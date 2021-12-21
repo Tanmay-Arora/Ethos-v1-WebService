@@ -1,0 +1,98 @@
+<app-header></app-header>
+<div class="cart mt-2">
+    <div class="container w-100 mt-5">
+        <div class="row mr-0">
+            <div class="col-5 mr-0">
+                <p class="cart-head text-dark text-adineue">Shopping Cart</p>
+            </div>
+        </div>
+        <hr class="col-12 my-0" />
+    </div>
+    <div class="container w-100 mt-5">
+        <div class="row mr-0">
+            <div class="col-8">
+                <div class="container-fluid px-1">
+                    <div class="row my-1" *ngFor="let i of items">
+                        <div class="col-12">
+
+                            <div class="item-wrap d-flex bg-product border border-1 border-dark py-2">
+                                <div class="h-100 col-3 mx-1" style="width: 170px;">
+                                    <img [src]="i.productimage"
+                                        class="h-100 w-100" />
+                                </div>
+                                <div class="item-info mx-3 pt-2">
+                                    <p class="item-head text-adineue mb-1">{{i.productname}}</p>
+                                    <div class="prod-attributes d-flex">
+                                    <div class="ps-1 pe-3">
+                                        <p class="selectsizetext text-adineue mb-1">Quantity</p>
+                                        <div class="dropdown">
+                                            <button class="btn btn-white border-1 border-dark rounded-0 h-25" type="button"
+                                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {{i.quantity}}<i class="fa fa-angle-down ps-2"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" (click) = "updateQuantity(i.id, '1')">1</a></li>
+                                                <li><a class="dropdown-item" (click) = "updateQuantity(i.id, '2')">2</a></li>
+                                                <li><a class="dropdown-item" (click) = "updateQuantity(i.id, '3')">3</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="ps-3 pe-1">
+                                        <p class="selectsizetext text-adineue mb-1">Size</p>
+                                        <div class="dropdown">
+                                            <button class="btn btn-white border-1 border-dark rounded-0 h-25" type="button"
+                                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                {{i.size}}<i class="fa fa-angle-down ps-2"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <li><a class="dropdown-item" (click)="updateSize(i.id, '6')">6</a></li>
+                                                <li><a class="dropdown-item" (click)="updateSize(i.id, '7')">7</a></li>
+                                                <li><a class="dropdown-item" (click)="updateSize(i.id, '8')">8</a></li>
+                                                <li><a class="dropdown-item" (click)="updateSize(i.id, '9')">9</a></li>
+                                                <li><a class="dropdown-item" (click)="updateSize(i.id, '10')">10</a></li>
+                                                <li><a class="dropdown-item" (click)="updateSize(i.id, '11')">11</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="action-div mt-3 px-1">
+                                        <a (click)="removeFromCart(i.id)" class="text-adineue remove-link text-decoration-none">Remove From Cart</a>
+                                    </div>
+                                </div>
+                                <div class="ms-auto me-5 pt-2 justify-content-center">
+                                    <p class="price-head text-adineue mb-1">Price</p>
+                                    <p class="">{{i.productprice}} x {{i.quantity}} Nos.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr class="col-12 my-3" />
+                <div class="total-display w-100 d-flex justify-content-end pe-2">
+                    <p>Subtotal ({{itemCount}} item): Rs.{{grossAmount}}</p>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="summary w-100 bg-white border border-1 rounded border-dark">
+                    <div class="container">
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                Subtotal ({{itemCount}} item):
+                            </div>
+                            <div class="col-3 offset-2">
+                                Rs.{{grossAmount}}
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-12">
+                                <button class="btn text-white bg-dark w-100" (click)="checkout()" >Proceed To Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

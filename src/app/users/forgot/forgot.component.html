@@ -1,0 +1,37 @@
+
+<div class="signup-section h-100 d-flex align-items-center">
+    <div class="container h-100">
+      <div class="row w-100">
+          <div class="col-2 offset-5 justify-content-center">
+            <img src="../../../assets/images/ethos_logo.png" width="100%" />
+          </div>
+      </div>  
+      <div class="row w-100">
+          <div class="col-4 offset-4 justify-content-center">
+              <div class="card signup-card shadow">
+                  <div class="card-body">
+                    <h4 class="card-title font-montserrat card-head">Forgot Password</h4>
+                    <hr>
+                    <form [formGroup]="forgotForm" (ngSubmit)= 'onSubmit()' novalidate autocomplete="off">
+                        <div class="mb-3">
+                            <label for="phoneInput" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phoneInput" name="phoneInput" [class.is-invalid]="phone!.invalid && phone!.touched" placeholder="Mobile Number" formControlName="phone"/>
+                            <div *ngIf="phone!.invalid && phone!.touched">
+                                <small *ngIf="phone?.hasError('required')" class="text-danger">Phone is Required<br></small>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn w-100 btn-black text-white" [disabled] = 'forgotForm.invalid'
+                                ><b>Submit</b></button>
+                    </form> 
+                    <hr class="my-3">
+                    <div>
+                        <p class="login-instead-text font-montserrat mb-0">&nbsp;<a
+                                class="text-decoration-none" routerLink="../login">Go to Login</a>
+                        </p>
+                    </div> 
+                  </div>
+              </div>
+          </div>
+      </div>  
+    </div>
+</div>

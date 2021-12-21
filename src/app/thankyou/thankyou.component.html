@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="cart mt-2">
+    <div class="container w-100 mt-5">
+        <div class="row mr-0">
+            <div class="col-8 mr-0">
+                <p class="cart-head text-dark text-adineue">Thank You!!&nbsp;<span class="text-success">Your Order has been Placed</span></p>
+            </div>
+        </div>
+        <hr class="col-12 my-0" />
+    </div>
+    <div class="container w-100 mt-5">
+        <div class="row mr-0">
+            <div class="col-8">
+                <div class="container-fluid px-1">
+                    <div class="row my-1" *ngFor="let i of items">
+                        <div class="col-12">
+
+                            <div class="item-wrap d-flex bg-product border border-1 border-dark py-2">
+                                <div class="h-100 col-3 mx-1" style="width: 170px;">
+                                    <img [src]="i.productimage"
+                                        class="h-100 w-100" />
+                                </div>
+                                <div class="item-info mx-3 pt-2">
+                                    <p class="item-head text-adineue mb-1">{{i.productname}}</p>
+                                    <div class="prod-attributes d-flex">
+                                    <div class="ps-1 pe-3">
+                                        <p class="selectsizetext text-adineue mb-1">Quantity</p>
+                                        <p class="selectsizetext text-adineue mb-1">{{i.quantity}}</p>
+                                        
+                                    </div>
+                                    <div class="ps-3 pe-1">
+                                        <p class="selectsizetext text-adineue mb-1">Size</p>
+                                        <p class="selectsizetext text-adineue mb-1">{{i.size}}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="ms-auto me-5 pt-2">
+                                    <p class="price-head text-adineue mb-1">Price</p>
+                                    <p class="">{{i.productprice}} x {{i.quantity}} Nos.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>          
+            </div>
+            <div class="col-4">
+                <div class="summary w-100 bg-white border border-1 rounded border-dark">
+                    <div class="container">
+                        <div class="row mt-5">
+                            <div class="col-12">
+                                <button class="btn text-white bg-dark w-100" (click)="redirToOrders()">Go to Orders Page</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,112 @@
+<app-header></app-header>
+<div class="cart mt-2">
+    <div class="container w-100 mt-5">
+        <div class="row mr-0">
+            <div class="col-5 mr-0">
+                <p class="cart-head text-dark text-adineue">Your Addresses</p>
+            </div>
+        </div>
+        <hr class="col-12 my-0" />
+    </div>
+    <div class="container w-100 mt-5">
+        <div class="row mr-0">
+            <div class="col-8">
+                <div class="container-fluid px-1">
+                    <div class="row my-1" *ngFor="let a of addresses">
+                        <div class="col-12">
+                            <div class="item-wrap d-flex bg-product border border-1 border-dark py-2 px-4">
+                                <div>
+                                    <p>Name: {{a.name}}</p>
+                                    <p>Address: {{a.address}}-{{a.pincode}}</p>
+                                    <p>Mobile: {{a.phone}}</p>
+                                </div>
+                                <div class="action-div ms-auto me-3">
+                                    <p><button class="btn" (click)="updateAddress"><i class="fa fa-edit"></i></button> | <button class="btn mb-1" (click)="deleteAddress()"><i class="fa fa-trash"></i></button></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="summary w-100 bg-white border border-1 rounded border-dark">
+                    <div class="container">
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button class="btn text-white bg-dark w-100" data-bs-toggle="modal" data-bs-target="#addressModal">Add Address</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addressModalLabel">Add Address</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="addressForm" novalidate >
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name<span
+                        class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="nameInput" name="nameInput" [class.is-invalid]="name!.invalid && name!.touched" formControlName="name"/>   
+                    <div *ngIf="name!.invalid && name!.touched">
+                        <small *ngIf="name?.hasError('required')" class="text-danger">Full Name is Required</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="lineInput1" class="form-label">House No., Flat, Building, Company, Apartment<span
+                        class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="lineInput1" name="lineInput1" [class.is-invalid]="addressLine1!.invalid && addressLine1!.touched" formControlName="addressLine1"/>   
+                    <div *ngIf="addressLine1!.invalid && addressLine1!.touched">
+                        <small *ngIf="addressLine1?.hasError('required')" class="text-danger">Address is Required</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="lineInput2" class="form-label">Area, Colony, Street, Landmamrk<span
+                        class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="lineInput2" name="lineInput2" [class.is-invalid]="addressLine2!.invalid && addressLine2!.touched" formControlName="addressLine2"/>   
+                    <div *ngIf="addressLine2!.invalid && addressLine2!.touched">
+                        <small *ngIf="addressLine2?.hasError('required')" class="text-danger">Address is Required</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="cityInput" class="form-label">City<span
+                        class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="cityInput" name="cityInput" [class.is-invalid]="city!.invalid && city!.touched"  formControlName="city"/>
+                    <div *ngIf="city!.invalid && city!.touched">
+                        <small *ngIf="city?.hasError('required')" class="text-danger">City is Required<br></small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="stateInput" class="form-label">State<span
+                        class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="stateInput" name="stateInput" [class.is-invalid]="state!.invalid && state!.touched"  formControlName="state"/>
+                    <div *ngIf="state!.invalid && state!.touched">
+                        <small *ngIf="state?.hasError('required')" class="text-danger">State is Required<br></small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="pincodeInput" class="form-label">Pincode<span
+                        class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="pincodeInput" name="pincodeInput" [class.is-invalid]="pincode!.invalid && pincode!.touched"  formControlName="pincode"/>
+                    <div *ngIf="pincode!.invalid && pincode!.touched">
+                        <small *ngIf="pincode?.hasError('required')" class="text-danger">Pincode is Required<br></small>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSubmit()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>

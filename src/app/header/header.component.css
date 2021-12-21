@@ -1,0 +1,131 @@
+#address-text {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+#hello-text, #returns-text {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+}
+
+#account-text, #orders-text {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+#cart-text {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.ad-text{
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+li, a {
+    text-decoration: none;
+}
+
+.text-underline-hover:hover {
+    text-decoration: underline;
+}
+
+.bold-link {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-weight: 550;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.light-link {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.nav{
+    z-index: 5;
+}
+
+
+.nav-item a{
+    border-bottom: 1px;
+}
+.nav-item a:hover {
+    border-bottom: black solid;
+}
+
+ .navbar .has-megamenu{position:static!important;}
+ .navbar .megamenu{left:0; right:0; width:100%; margin-top:0;  }
+
+ .dropdown-menu {
+     z-index: 1;
+ }
+
+ .navbar .dropdown-menu-end{ right:0; left: auto;  }
+	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+	.navbar .dropdown-menu.fade-up{ top:180%;  }
+	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
+
+    
+.dropdown-headers {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: 1.87px;
+    font-size: 14px;
+}
+
+.dropdown-menu-contents {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.modal-body-text {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+.modal-body-button {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+}
+
+.accountInfoMenu {
+    width: 30vw;
+}
+
+.dropdown-menu-center {
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, 0) !important;
+}
+
+.list-option{
+    text-align: left !important;
+}
+
+.acc-list-head{
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 550;
+}
+
+.acc-list-option {
+    font-family: 'Helvetica-Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+
+

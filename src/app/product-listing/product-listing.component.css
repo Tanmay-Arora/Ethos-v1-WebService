@@ -1,0 +1,20 @@
+.listing-head{
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.text-adineue{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+.bg-white{
+    background-color: white;
+}
+
+.filter-font {
+    color: black;
+    font-weight: 150;
+    letter-spacing: 1px;
+}

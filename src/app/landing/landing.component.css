@@ -1,0 +1,229 @@
+.landing-wrapper {
+    height: 100%;
+    z-index: -1;
+}
+
+.carousel-caption{
+    position: absolute;
+    right: 50%;
+    bottom: 340px;
+    left: 10%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: left;
+}
+
+.carousel-caption-slide3{
+    position: absolute;
+    right: 50%;
+    bottom: 185px;
+    left: 10%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: left;
+}
+
+.filter-brightness-50 {
+    filter: brightness(50%);
+}
+
+.filter-brightness-110 {
+    filter: brightness(110%);
+}
+
+.carousel-caption-content{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.carousel-caption-content{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 250;
+}
+
+.btn-white{
+    background-color: #fff;
+}
+
+.text-black{
+    color: black;
+}
+
+.carousel-content-btn{
+    width: 120px;
+    height: 50px;
+}
+.carousel-btn-design{
+    width: 119px;
+    height: 50px;
+    margin-top: -46px !important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    margin-top: 230px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.header-content{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.button-text{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.overlay-div{
+    z-index: 2;
+    position: relative;
+    bottom: 33%;
+    left: 5%;
+}
+
+.font-dancing-script{
+    font-family: 'Dancing Script', sans-serif;
+}
+
+.font-gfs-didot{
+    font-family: 'GFS Didot', sans-serif;
+}
+
+.men-card{
+    background-image: url(../../assets/images/pexels-photo-3190334.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.women-card{
+    background-image: url(../../assets/images/pexels-photo-7736764.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.kids-card{
+    background-image: url(../../assets/images/pexels-photo-694719.jpeg);
+    background-position: right;
+    background-size: cover;
+}
+
+.title{
+    position: relative;
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    top: 45%;
+    left: 45%;
+    margin-bottom: 0;
+    width: 100px;
+}
+
+.card:hover {
+    border: 1px solid black;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgb(87, 87, 87);
+}
+
+.footer{
+    background-color: #363738;
+}
+
+.footer-content-text{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    color: #c8cbcc;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.copyright-icon {
+    font-size: 12px;
+}
+
+.abtus {
+    background-color: #e9ecef;
+}
+
+.abtus-heading {
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 16px;
+}
+
+.abtus-content{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 100px;
+    font-size: 12px;
+}
+
+.offer-div{
+    background-color: #ede734;
+}
+
+.offer-banner{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 800px;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.offer-btn-design{
+    margin-top: 4px !important;
+    margin-left: -115px !important;
+}
+
+.footer-category-head {
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer-nav-list{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.pre-footer{
+    background-color: #e9ecef;
+}
+
+.shopnow-link {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card-content{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 13px;
+}
+
+
+
+
+

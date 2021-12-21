@@ -1,0 +1,70 @@
+
+<div class="signup-section h-100 d-flex align-items-center">
+    <div class="container h-100">
+      <div class="row w-100">
+          <div class="col-2 offset-5 justify-content-center">
+            <img src="../../../assets/images/ethos_logo.png" width="100%" />
+          </div>
+      </div>  
+      <div class="row w-100">
+          <div class="col-4 offset-4 justify-content-center">
+              <div class="card signup-card shadow">
+                  <div class="card-body">
+                    <h4 class="card-title font-montserrat card-head">Signup</h4>
+                    <hr>
+                    <form [formGroup]="signUpForm" novalidate >
+                        <div class="mb-3">
+                            <label for="nameInput" class="form-label">Full Name<span
+                                class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="nameInput" name="nameInput" [class.is-invalid]="name!.invalid && name!.touched"  placeholder="Enter your full name" formControlName="name"/>   
+                            <div *ngIf="name!.invalid && name!.touched">
+                                <small *ngIf="name?.hasError('required')" class="text-danger">Email is Required</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailInput" name="emailInput" [class.is-invalid]="email!.invalid && email!.touched"  placeholder="Email Address" formControlName="email"/>
+                            <div *ngIf="email!.invalid && email!.touched">
+                                <small *ngIf="email?.hasError('required')" class="text-danger">Email is Required<br></small>
+                                <small *ngIf="email?.hasError('email')"class="text-danger">Invalid Email Address</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneInput" class="form-label">Mobile Number</label>
+                            <input type="tel" class="form-control" id="phonelInput" name="phoneInput" [class.is-invalid]="phone!.invalid && phone!.touched"  placeholder="Mobile Number" formControlName="phone"/>
+                            <div *ngIf="phone!.invalid && phone!.touched">
+                                <small *ngIf="phone?.hasError('required')" class="text-danger">Phone is Required<br></small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="passwordInput" name="passwordInput" [class.is-invalid]="password!.invalid && password!.touched"  placeholder="Password" formControlName="password" />
+                            <div *ngIf="phone!.invalid && phone!.touched">
+                                <small *ngIf="password?.hasError('required')" class="text-danger">Password is Required<br></small>
+                                <small *ngIf="password?.hasError('minlength')"class="text-danger">Invalid Password(Must have at least 7 characters.)</small>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPasswordInput" name="confirmPasswordInput" [class.is-invalid]="(confirmPassword!.invalid && confirmPassword!.touched) || confirmPassword!.hasError('mismatch')"  placeholder="Confirm Password" formControlName="confirmPassword" />
+                            <div *ngIf="confirmPassword!.touched && !(confirmPassword!.hasError('mismatch'))">
+                                <small *ngIf="signUpForm?.hasError('mismatch')" class="text-danger">Re-entered password does not match the password field.<br></small>
+                                <small *ngIf="confirmPassword?.hasError('required')" class="text-danger">Confirming Password is Required<br></small>
+                                <small *ngIf="confirmPassword?.hasError('minlength')"class="text-danger">Invalid Password(Must have at least 7 characters.)</small>            
+                            </div>
+                        </div>
+                        <button type="button" (click)="onSubmit()" class="btn w-100 btn-black text-white" [disabled] = 'signUpForm.invalid'  
+                                ><b>Submit</b></button>
+                    </form> 
+                    <hr class="my-3">
+                    <div>
+                        <p class="login-instead-text font-montserrat mb-0">Already signed up?&nbsp;<a
+                                class="text-decoration-none" routerLink="../login">Go to Login</a>
+                        </p>
+                    </div>   
+                  </div>
+              </div>
+          </div>
+      </div>  
+    </div>
+</div>

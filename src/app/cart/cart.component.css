@@ -1,0 +1,44 @@
+.cart-head{
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.text-adineue{
+    font-family: 'Adineue PRO', Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+.bg-product{
+    background-color: #edeff0;
+}
+
+.item-wrap{
+    height: 175px;
+}
+
+.item-wrap:hover {
+    border-radius: 0px;
+    box-shadow: 0 0 3px rgb(87, 87, 87);
+}
+
+.item-head{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.remove-link {
+    font-style: normal;
+    font-size: 13px;
+}
+
+.price-head {
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 1.5px;
+}
+
+.summary {
+    height: 170px;
+}

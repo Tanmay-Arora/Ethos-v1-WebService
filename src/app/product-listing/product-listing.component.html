@@ -1,0 +1,100 @@
+<app-header></app-header>
+<div class="listing mt-2">
+    <div class="container w-100 mt-5">
+        <div class="row mr-0">
+            <div class="col-5 mr-0">
+                <p class="listing-head text-dark text-adineue">New Arrivals For {{listingType}}</p>
+            </div>
+        </div>
+        <hr class="col-12 my-0" />
+        <div class="row mr-0 my-1">
+            <div class="col-12 mr-0 d-flex">
+                <div class="dropdown px-1">
+                    <button class="btn btn-white  text-adienue filter-font" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Division <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown px-1">
+                    <button class="btn btn-white text-adienue filter-font" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Product Type <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown px-1">
+                    <button class="btn btn-white text-adienue filter-font" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Size <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown px-1">
+                    <button class="btn btn-white text-adienue filter-font" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Colour <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown px-1 ms-auto">
+                    <button class="btn btn-white text-adienue filter-font" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Sort By <i class="fa fa-angle-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="col-12 my-0" />
+        <div class="row mr-0 my-3 gx-5" >
+            <div class="col px-1" *ngFor="let p of products">
+                <div class="d-flex justify-content-center w-100">
+                  <div class="card" style="height: 430px;">
+                    <img [src]="p.image" class="card-img-top" alt="">
+                    <div class="card-body">
+                      <div class="container-fluid px-0">
+                        <div class="row px-0">
+                          <div class="col-12 px-1" style="height: 50px;">
+                            <h6 class="prod-card-title text-uppercase">{{p.name}}</h6>
+                          </div>
+                        </div>
+                        <div class="row px-0">
+                          <div class="col-12 px-1" style="height: 80px;">
+                            <p class="text-dark card-content">{{p.caption}}</p>
+                          </div>
+                        </div>
+                        <div class="row px-0">
+                          <div class="col-12 px-1 align-self-end">
+                            <a (click)='showProduct(p.id)' class="text-dark text-decoration-underline shopnow-link text-uppercase mb-1">Shop
+                              Now</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

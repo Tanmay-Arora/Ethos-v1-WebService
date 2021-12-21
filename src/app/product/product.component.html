@@ -1,0 +1,81 @@
+<app-header></app-header>
+<div class="product">
+    <div class="container-fluid w-100">
+        <div class="row mr-0">
+            <div class="col-8 px-0 bg-product d-flex justify-content-center pt-5">
+                <img [src]= "product.image" alt="" width="500px" height="450px">
+            </div>
+            <!-- <div class="offcanvas show offcanvas-end" tabindex="-1" id="offcanvasRight" data-bs-scroll="true" data-bs-backdrop="false" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                  
+                </div>
+                <div class="offcanvas-body">
+                  ...
+                </div>
+              </div> -->
+            <div class="col-4 pt-3 h-100 position-relative">
+
+                <div class="sidebar">
+                    <p class="productname text-adineue pt-4 ps-4 pb-0 mb-0">{{product.name}}</p>
+                <p class="pricedisp text-adineue ps-4 mb-0">Rs.&nbsp;{{product.price}}</p>
+                <small class="ps-4 mt-0 text-adineue">(Inclusive of all taxes)<br></small>
+                <p class="selectsizetext text-adineue ps-4 mb-3 mt-5">Select Size</p>
+                <div class="sizeDiv d-flex ps-4 mb-5">
+                    <button class="btn mx-0 px-4 border-dark rounded-0" [ngClass]="size === '6' ? 'bg-dark text-light' : 'text-light text-dark'" (click)="setSize('6')">6</button>
+                    <button class="btn mx-0 px-4 border-dark rounded-0" [ngClass]="size === '7' ? 'bg-dark text-light' : 'text-light text-dark'" (click)="setSize('7')">7</button>
+                    <button class="btn mx-0 px-4 border-dark rounded-0" [ngClass]="size === '8' ? 'bg-dark text-light' : 'text-light text-dark'" (click)="setSize('8')">8</button>
+                    <button class="btn mx-0 px-4 border-dark rounded-0" [ngClass]="size === '9' ? 'bg-dark text-light' : 'text-light text-dark'" (click)="setSize('9')">9</button>
+                    <button class="btn mx-0 px-4 border-dark rounded-0" [ngClass]="size === '10' ? 'bg-dark text-light' : 'text-light text-dark'" (click)="setSize('10')">10</button>
+                    <button class="btn mx-0 px-4 border-dark rounded-0" [ngClass]="size === '11' ? 'bg-dark text-light' : 'text-light text-dark'" (click)="setSize('11')">11</button>
+                </div>
+                <p class="selectsizetext text-adineue ps-4 mb-1 mt-5">Quantity</p>
+                <div class="dropdown ps-4">
+                    <button class="btn btn-white border-1 border-dark rounded-0 h-25" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{quantity}}<i class="fa fa-angle-down ps-2"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" (click)="setQuantity('1')">1</a></li>
+                      <li><a class="dropdown-item" (click)="setQuantity('2')" >2</a></li>
+                      <li><a class="dropdown-item" (click)="setQuantity('3')">3</a></li>
+                    </ul>
+                </div>
+                <div class="buttonDiv d-flex pt-3">
+                    <button class="btn btn-dark border-0 rounded-0 ms-4 mt-5 mb-5 w-75 addCartBtn" (click)="addToCart(product.id, product.name, product.price, product.image)"><span class="pe-5">Add to Cart</span><i class="fa fa-arrow-right fa-md"></i></button>
+                    <div class="carousel-btn-design border border-1 ms-1 border-dark rounded-0 w-75"></div>
+                    <button class="btn btn-white border-1 border-dark rounded-0 ms-4 mt-5 mb-5"><i class="fa fa-heart"></i></button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <div class="row mr-0 mb-5 px-0">
+                <div class="col-4 d-flex pe-3 me-2">
+                    <div class="description pt-5">
+                        <p class="deschead text-adineue pb-3 my-0">{{product.name}}</p>
+                        <p class="caption text-adineue pb-3 my-0">{{product.caption}}</p>
+                        <p class="desccontent text-adineue py-0 my-0">{{product.desc}}</p>
+                    </div>
+                </div>
+                <div class="col-4 px-0 ms-2 d-flex justify-content-center align-items-center">
+                    <img [src]= "product.image" alt="" width="100%" height="90%">
+                </div>
+                <!--add image if possible-->
+            </div>
+            <div class="row mr-0 mb-5">
+                <div class="col-4 d-flex">
+                    <div class="description">
+                        <p class="deschead text-adineue">Specifications</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row mr-0 mb-5" *ngFor="let s of specs | handleRows:2">
+                    <div class="col-4" *ngFor="let spec of s">
+                        <p class="spec-content text-adineue text-dark py-0 mb-0">{{spec}}</p>
+                    </div>   
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

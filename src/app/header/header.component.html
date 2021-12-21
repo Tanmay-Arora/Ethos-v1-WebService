@@ -1,0 +1,178 @@
+<div class="header">
+    <nav class="navbar navbar-light bg-black">
+      <div class="container-fluid">
+        <div class="row  w-100">
+          <div class="col-4 d-flex justify-content-center">
+            <a class="ad-text text-white py-0 my-0 text-underline-hover" href="#">SIGN UP & GET 15% OFF</a>
+          </div>
+          <div class="col-4 d-flex justify-content-center">
+            <a class="ad-text text-white py-0 my-0 text-underline-hover" href="#">QUICK EASY RETURNS ON PREPAID ORDERS</a>
+          </div>
+          <div class="col-4 d-flex justify-content-center">
+            <a class="ad-text text-white py-0 my-0 text-underline-hover" href="#">FREE DELIVERY ON ALL ORDERS</a>
+          </div>
+        </div>  
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-grey py-0 justify-content-start">
+        <div class="container-fluid">
+            <a class="navbar-brand py-0 me-4" href="#">
+                <img src="../../assets/images/ethos_logo.png" alt="logo" width="83px" height="60px">
+            </a>
+            <button class="btn me-4 border-bottom-0 text-center location-btn" data-bs-toggle="modal" data-bs-target="#geolocationModal"><i
+                    class="fa fa-map-marker fa-md pe-2"></i><span id="address-text">{{address}}</span></button>
+    
+            <div class="input-group w-50 me-4">
+                <input class="form-control py-0" type="search" placeholder="Search" aria-label="Search">
+                <span class="input-group-text py-0"><button class="input group-text btn btn-muted" type="submit"><i class="fa fa-search"></i></button></span>
+            </div>
+            <div class="dropdown">
+              <button class="btn me-3 border-bottom-0 border-top-0 pt-0 text-start signin-btn lh-1" type="button" id="accountInfoBtn" data-bs-toggle="dropdown" aria-expanded="false"><span id="hello-text">Hello, {{greetingText}}</span><br><span id="account-text" class="pe-1">Accounts & Lists</span><i class="fa fa-caret-down"></i></button>
+              <div class="dropdown-menu dropdown-menu-center accountInfoMenu" aria-labelledby="accountInfoBtn">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12">
+                      <button class="btn text-white bg-dark w-100" *ngIf="!(loginStatus.getFromStorage('loginState') === '' ? false : true)" routerLink="../users/login" >Sign in</button>
+                      <p class="my-2 acc-list-option text-center" *ngIf="!(loginStatus.getFromStorage('loginState') === '' ? false : true)"  style="font-size: 11px;">New Customer?<a class="text-primary" routerLink = "../users/signup">Start Here.</a></p>
+                      <button class="btn text-white bg-dark w-100" *ngIf="(loginStatus.getFromStorage('loginState') === '' ? false : true)" (click) = "_initLogout()"  >Log Out</button>
+                    </div>
+                  </div>
+                  <hr class="dropdown-divider">
+                  <div class="row">
+                    <div class="col-6 border-end d-flex justify-content-start">
+                      <p class="ps-2 acc-list-head mt-1">Your Lists</p>
+                    </div>
+                    <div class="col-6">
+                      <p class="ps-2 acc-list-head mt-1">Your Account</p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6 border-end ">
+                     <ul class="list-unstyled flex-column">
+                       <li class="list-option ps-2 acc-list-option">Wishlist</li>
+                       <li class="list-option ps-2 acc-list-option">Create a new Wishlist</li>
+                     </ul>
+                    </div>
+                    <div class="col-6">
+                      <ul class="list-unstyled flex-column">
+                        <li class="list-option ps-2 acc-list-option"><a class="text-dark text-decoration-none" routerLink="../address">Your Addresses</a></li>
+                        <li class="list-option ps-2 acc-list-option">Your Orders</li>
+                        <li class="list-option ps-2 acc-list-option">Saved for Later</li>
+                        <li class="list-option ps-2 acc-list-option">Your Recommendations</li>
+                      </ul>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>
+            <button class="btn me-3 border-bottom-0 border-top-0 pt-0 text-start signin-btn lh-1"><span id="returns-text">Returns &</span><br><span id="orders-text">Orders</span></button>
+            <button class="btn border-bottom-0 text-start cart-btn pe-1 lh-1"><i class="fa fa-shopping-cart fa-lg pe-1 align-baseline"></i><span id="cart-text" >Cart</span></button>
+            <p class="border-bottom-0 me-auto mb-0 text-start item_count lh-1 px-1 py-1 bg-muted">{{itemCount}}</p>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown has-megamenu px-2" *ngFor="let navBoldTab of navBoldTabArray">
+              <!--<a class="nav-link bold-link text-dark mx-1" href="#">Men</a>-->
+              <a class="nav-link bold-link text-dark" href="#" id="navbarMenDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                {{navBoldTab}}
+              </a>
+              <div class="dropdown-menu megamenu" aria-labelledby="navbarMenDropdown">
+                <div class="container-fluid">
+                  <div class="row w-100">
+                    <div class="col-2 offset-1 my-0 py-0 border-end">
+                      <ul class="list-unstyled mt-1">
+                        <li class="fw-bold dropdown-headers mb-1">FEATURED</li>
+                        <li class="dropdown-menu-contents">New Arrivals</li>
+                        <li class="dropdown-menu-contents">Orignals</li>
+                        <li class="dropdown-menu-contents">Five Ten</li>
+                      </ul>
+                    </div>
+                    <div class="col-8 offset-1">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col" *ngFor="let category of categoryArray; let i = index">
+                            <ul class="list-unstyled mt-1"> 
+                              <li class="fw-bold dropdown-headers mb-1">{{category}}</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown has-megamenu px-2" *ngFor="let navLightTab of navLightTabArray">
+              <!--<a class="nav-link bold-link text-dark mx-1" href="#">Men</a>-->
+              <a class="nav-link light-link text-dark" href="#" id="navbarMenDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                {{navLightTab}}
+              </a>
+              <div class="dropdown-menu megamenu" aria-labelledby="navbarMenDropdown">
+                <div class="container-fluid">
+                  <div class="row w-100">
+                    <div class="col-2 offset-1 my-0 py-0 border-end">
+                      <ul class="list-unstyled mt-1">
+                        <li class="fw-bold dropdown-headers mb-1">FEATURED</li>
+                        <li class="dropdown-menu-contents">New Arrivals</li>
+                        <li class="dropdown-menu-contents">Orignals</li>
+                        <li class="dropdown-menu-contents">Five Ten</li>
+                      </ul>
+                    </div>
+                    <div class="col-8 offset-1">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col">
+                            <ul class="list-unstyled mt-1"> 
+                              <li class="fw-bold dropdown-headers mb-1"></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+    </nav>
+
+    <div class="modal fade geolocationModal" id="geolocationModal" tabindex="-1" aria-labelledby="geolocationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-muted">
+            <p class="modal-title" id="geolocationModalLabel address-text">Choose your location</p>
+            <button type="button" class="btn-close" #closebutton data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="modal-body-text text-muted">Select a delivery location to see product avaibility and delivery options.</p>
+            <button class="btn modal-body-button text-white bg-dark w-100" data-bs-dismiss="modal" *ngIf="!(loginStatus.getFromStorage('loginState') === '' ? false : true)" routerLink = "../users/login" >Sign in to see your addresses</button>
+            <div *ngIf="(loginStatus.getFromStorage('loginState') === '' ? false : true)" >
+              <div class="card mb-1 bg-white text-dark" *ngFor="let a of addresses">
+                <div class="card-body">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="setDefaultAddress" id="flexCheckDefault">
+                </div>
+                  <p class="mb-0 pb-0">{{a.name}}</p>
+                  <p class="mb-0 pb-0">{{a.address}}-{{a.pincode}}</p>
+                  <p class="mb-0 pb-0">{{a.phone}}</p>
+                </div>
+              </div>
+            </div>
+            <p class="modal-body-text text-muted text-center mt-3">or enter an Indian pincode</p>
+            <form [formGroup]="pincodeForm" class="row">
+              <div class="col-9">
+                <input type="text" class="form-control w-100 bordr border-dark" id="pincode" placeholder="Pincode" [class.is-invalid]="pincode!.invalid && pincode!.touched" formControlName="pincode"/>
+                <div *ngIf="pincode!.invalid && pincode!.touched">
+                  <small *ngIf="pincode?.hasError('required')" class="text-danger">Pincode is Required</small>
+              </div>
+              </div>
+              <div class="col-3">
+                <button type="submit" (click)="fetchLocationByPincode()"  class="btn btn-white border border-dark w-100">Apply</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
